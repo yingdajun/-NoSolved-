@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{41DAAFB6-B9FB-43A2-9EEE-817F870C9110}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutoToExcelMaterialDemo</RootNamespace>
+    <AssemblyName>AutoToExcelMaterialDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.0.0.999, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.0.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.4.1\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.4.1\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.4.1\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.4.1\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitAddInUtility">
+      <HintPath>G:\REVITAPI\2018 API\RevitAddInUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitAPI">
+      <HintPath>G:\REVITAPI\2018 API\RevitAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>G:\REVITAPI\2018 API\RevitAPIUI.dll</HintPath>
+    </Reference>
+    <Reference Include="SourceGrid">
+      <HintPath>H:\超级VV\SourceGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddElementId.cs" />
+    <Compile Include="AddElementIdToPara.cs" />
+    <Compile Include="AdjustPipeDistance.cs" />
+    <Compile Include="AdjustZhiGuan.cs" />
+    <Compile Include="BanByPoint.cs" />
+    <Compile Include="AdjustZiTi.cs" />
+    <Compile Include="BetweenJoin.cs" />
+    <Compile Include="Brush.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Brush.Designer.cs">
+      <DependentUpon>Brush.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="ColumnAlToWall.cs" />
+    <Compile Include="DuctByFanWan.cs" />
+    <Compile Include="ElementByAL.cs" />
+    <Compile Include="EspaceBiaoZhu.cs" />
+    <Compile Include="FangPo.cs" />
+    <Compile Include="FanMenByRoate.cs" />
+    <Compile Include="FEC.cs" />
+    <Compile Include="FloorLevel3D.cs" />
+    <Compile Include="GridToCreateWall.cs" />
+    <Compile Include="GuanXianByDing.cs" />
+    <Compile Include="GuanXianByLength.cs" />
+    <Compile Include="ParaBrushWpf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParaBrushWpf.Designer.cs">
+      <DependentUpon>ParaBrushWpf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShangianLiGuanl.cs" />
+    <Compile Include="GuanXianByZhu.cs" />
+    <Compile Include="GuanXianCreateLi.cs" />
+    <Compile Include="GuanXianDingWeiBiaoZhu.cs" />
+    <Compile Include="GuanXianPou.cs" />
+    <Compile Include="GuanXianSystemByToUpAndDown.cs" />
+    <Compile Include="HideAndVisibleGrid.cs" />
+    <Compile Include="JClassDemo.cs" />
+    <Compile Include="JiDianFuBiaoZhu.cs" />
+    <Compile Include="JingXiFilter.cs" />
+    <Compile Include="JoinDuctcs.cs" />
+    <Compile Include="LiguanByFloor.cs" />
+    <Compile Include="LiguanDuiQi.cs" />
+    <Compile Include="MachineAdjust.cs" />
+    <Compile Include="mainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainWindow.Designer.cs">
+      <DependentUpon>mainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MEPMange.cs" />
+    <Compile Include="Middle_Data.cs" />
+    <Compile Include="MingXiTocSV.cs" />
+    <Compile Include="MingXiToExcel.cs" />
+    <Compile Include="MultiToExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultiToExcel.Designer.cs">
+      <DependentUpon>MultiToExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NameByGrid.cs" />
+    <Compile Include="NameByGridWpf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NameByGridWpf.Designer.cs">
+      <DependentUpon>NameByGridWpf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParaBrush.cs" />
+    <Compile Include="ParellZhu.cs" />
+    <Compile Include="PengByAdjust.cs" />
+    <Compile Include="PenNumber.cs" />
+    <Compile Include="PipeByFloor.cs" />
+    <Compile Include="PoDuBiaoZhu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PushPara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PushPara.Designer.cs">
+      <DependentUpon>PushPara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QiaoJiaByZhu.cs" />
+    <Compile Include="ReFangKaiDong.cs" />
+    <Compile Include="ScheDataToCsv.cs" />
+    <Compile Include="ShiGongDuanPart.cs" />
+    <Compile Include="StandardColumn.cs" />
+    <Compile Include="StrangeByQi.cs" />
+    <Compile Include="SystemFamilyToRVT.cs" />
+    <Compile Include="tmp.cs" />
+    <Compile Include="ViewTmp.cs" />
+    <Compile Include="WallAndZhuByMat.cs" />
+    <Compile Include="WallToAlBeam.cs" />
+    <Compile Include="XianGuanFanMo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Brush.resx">
+      <DependentUpon>Brush.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainWindow.resx">
+      <DependentUpon>mainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultiToExcel.resx">
+      <DependentUpon>MultiToExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NameByGridWpf.resx">
+      <DependentUpon>NameByGridWpf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PushPara.resx">
+      <DependentUpon>PushPara.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

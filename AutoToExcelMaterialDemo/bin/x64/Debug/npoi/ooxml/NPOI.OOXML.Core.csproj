@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	<AssemblyName>NPOI.OOXML</AssemblyName>
+	<RootNamespace>NPOI.OOXML</RootNamespace>
+	<SignAssembly>true</SignAssembly>
+	<AssemblyOriginatorKeyFile>npoi.snk</AssemblyOriginatorKeyFile>
+	<PackageId>NPOI</PackageId>
+	<RepositoryUrl>https://github.com/tonyqus/npoi</RepositoryUrl>	
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\solution\Lib</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="POIFS\Crypt\Dsig\KeyInfoKeySelector.cs" />
+    <Compile Remove="POIFS\Crypt\Dsig\Services\RelationshipTransformService.cs" />
+    <Compile Remove="Properties\AssemblyInfoDotnet2.cs" />
+    <Compile Remove="XSSF\Extractor\XSSFEventBasedExcelExtractor.cs" />
+    <Compile Remove="XSSF\UserModel\Charts\XSSFNumberCache.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BouncyCastle.NetCore" Version="1.8.5" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\main\NPOI.Core.csproj" />
+    <ProjectReference Include="..\openxml4Net\NPOI.OpenXml4Net.Core.csproj" />
+    <ProjectReference Include="..\OpenXmlFormats\NPOI.OpenXmlFormats.Core.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	<AssemblyName>NPOI.OpenXmlFormats</AssemblyName>
+	<SignAssembly>true</SignAssembly>
+	<AssemblyOriginatorKeyFile>npoi.snk</AssemblyOriginatorKeyFile>
+	<PackageId>NPOI</PackageId>
+	<RepositoryUrl>https://github.com/tonyqus/npoi</RepositoryUrl>	
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\solution\Lib</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\main\NPOI.Core.csproj" />
+    <ProjectReference Include="..\openxml4Net\NPOI.OpenXml4Net.Core.csproj" />
+  </ItemGroup>
+
+</Project>
